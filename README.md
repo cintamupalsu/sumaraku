@@ -33,7 +33,7 @@ Then write code...
 🤧🥴😵‍💫😮‍💨
 When done writing the code
 ```
-$ git add -A
+$ git add .
 ```
 Write a message related to code just written.
 ```
