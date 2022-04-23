@@ -1,7 +1,7 @@
 <header class="navbar navbar-light  bg-light navbar-fixed-top shadow p-1 mb-3 rounded">
   <div class="container">
     <a class="navbar-brand" href="<%= root_path %>" id="jdf_title">
-      <%= image_tag("common/jdf_logo.png", alt:"jdf logo", size: "30x27", id: "jdf_logo") %>静岡ﾑｽﾘﾑ協会
+      <%= image_tag("common/sumaraku_logo.png", alt:"jdf logo", size: "30x27", id: "jdf_logo") %>スマラク
     </a>
     <nav>
       <ul class="nav">
@@ -11,19 +11,19 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><%= link_to "🏠 ホーム", root_path, class: "nav-link" %> </li>
-            <li><%= link_to "🏗 設備", facility_path, class: "nav-link" %> </li>
-            <li><%= link_to "🍱 市場", market_path, class: "nav-link" %> </li>
-            <li><%= link_to "📣 ダワー", dahwa_path, class: "nav-link" %> </li>
-            <li><%= link_to "💯 検定問題", quiz_path, class: "nav-link" %> </li>
-            <li><%= link_to "🗓 カレンダー", calendar_path, class: "nav-link" %> </li>
-            <li><%= link_to "🕋 ハラル静岡", halal_path, class: "nav-link" %> </li>
+            <li><%= link_to "🏗 ダッシュボード", "#", class: "nav-link" %> </li>
+            <li><%= link_to "🍱 ファイル", "#", class: "nav-link" %> </li>
+            <li><%= link_to "📣 スマぺディア", "#", class: "nav-link" %> </li>
+            <li><%= link_to "💯 メッセージ", "#", class: "nav-link" %> </li>
+            <li><%= link_to "🗓 カレンダー", "#", class: "nav-link" %> </li>
+            <li><%= link_to "🤷🏻 その他", "#", class: "nav-link" %> </li>
           </ul>
         </li>
         <% if user_signed_in? %>
           <% if current_user.user_role_transactions.count > 0 %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                🕌 機能
+                🧳 機能
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <% if UserRoleTransaction.where("user_id = ? AND user_role_id = 1", current_user.id) %>
