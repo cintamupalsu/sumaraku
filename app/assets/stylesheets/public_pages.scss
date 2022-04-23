@@ -1,0 +1,59 @@
+// Place all the styles related to the PublicPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap/scss/bootstrap";
+
+$gray-medium-light: #ffd699;
+$gray-darker: #ffc166;
+$gray-light: #ffad33;
+$gray: #ff9800;
+$blue-light: #FF6d0A;
+$background: #ffeacc;
+//$blue-light: #FEDEBE;
+
+#general-msg{
+    margin-top: 5px;
+}
+.background-blue{
+    background: $background;
+}
+#jdf_logo{
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+}
+#jdf_title {
+    font-family: "HGP行書体";
+    font-size: 21px;
+    color: $blue-light;
+    letter-spacing: -5px;
+}
+footer{
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px solid #ffa219;
+    color: $gray-light;
+    a{
+       color: $gray;
+    }
+    &:hover{
+       color: $gray-darker;   
+    }
+    small{
+       float: left;      
+    }
+    ul{
+       float: right;
+       list-style: none;
+       li{
+          float: left;
+          margin-left: 15px;
+       }
+    }
+ }
+header{
+   .nav-link{
+      color: $blue-light;
+   }
+}

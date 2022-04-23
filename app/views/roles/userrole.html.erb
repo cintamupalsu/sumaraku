@@ -1,0 +1,39 @@
+<%provide(:title,"User Roles")%>
+<div class="row bg-white border rounded-bottom rounded-3 shadow">
+    <div class="col-12 border">
+        <div class="row">
+            <div class="col-2 pt-1">
+                <%= link_to '🔙戻る', usermanage_path, class:"btn btn-outline-primary btn-sm" %>
+            </div>
+            <div class="col-10">
+                <h3>ユーザー名: <%= @user.name %></h3>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header text-center">
+                <h4> User roles </h4>
+            </div>
+            <div class="card-body">
+                <%= form_for(:update_roles, url: update_roles_path) do |f| %>
+                    <%= f.hidden_field :user_id, value: @user.id %>
+                    <% @roles.each do |role|%>
+                        <div class="row border-bottom mt-1 mb-1">
+                            <div class="col-1 text-center">
+                                <% rt = UserRoleTransaction.where("user_id = ? AND user_role_id = ?", @user.id, role.id).first %>
+                                <% if rt %>
+                                    <%= f.check_box :yaru, multiple: true, checked: true %>
+                                <% else %>
+                                    <%= f.check_box :yaru, multiple: true %>
+                                <% end %>
+                            </div>
+                            <div class="col-11">
+                                <%= role.content %>
+                            </div>
+                        </div>
+                    <% end %>
+                    <%= f.submit "Update and return to Users management", class: "btn btn-outline-primary btn-block" %>  
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>

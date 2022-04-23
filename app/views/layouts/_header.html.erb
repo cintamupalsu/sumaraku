@@ -1,0 +1,63 @@
+<header class="navbar navbar-light  bg-light navbar-fixed-top shadow p-1 mb-3 rounded">
+  <div class="container">
+    <a class="navbar-brand" href="<%= root_path %>" id="jdf_title">
+      <%= image_tag("common/jdf_logo.png", alt:"jdf logo", size: "30x27", id: "jdf_logo") %>静岡ﾑｽﾘﾑ協会
+    </a>
+    <nav>
+      <ul class="nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            🧾 メニュー
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><%= link_to "🏠 ホーム", root_path, class: "nav-link" %> </li>
+            <li><%= link_to "🏗 設備", facility_path, class: "nav-link" %> </li>
+            <li><%= link_to "🍱 市場", market_path, class: "nav-link" %> </li>
+            <li><%= link_to "📣 ダワー", dahwa_path, class: "nav-link" %> </li>
+            <li><%= link_to "💯 検定問題", quiz_path, class: "nav-link" %> </li>
+            <li><%= link_to "🗓 カレンダー", calendar_path, class: "nav-link" %> </li>
+            <li><%= link_to "🕋 ハラル静岡", halal_path, class: "nav-link" %> </li>
+          </ul>
+        </li>
+        <% if user_signed_in? %>
+          <% if current_user.user_role_transactions.count > 0 %>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                🕌 機能
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <% if UserRoleTransaction.where("user_id = ? AND user_role_id = 1", current_user.id) %>
+                  <li><%= link_to "👨🏻‍✈️ ユーザー管理", usermanage_path, class: "nav-link" %></li>
+                <% end %>
+                <% if UserRoleTransaction.where("user_id = ? AND user_role_id = 2", current_user.id) %>
+                  <li><%= link_to "🗞 ニュース管理", "#", class: "nav-link" %></li>
+                <% end %>
+                <% if current_user.user_role_transactions.count > 0%>
+                  <li><hr class="dropdown-divider"></li>
+                <% end %>
+                <li><%= link_to "🚙 ヒッチハイク", "#", class: "nav-link" %></li>
+              </ul>
+            </li>
+          <% end %>
+        <% end %>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              👥 会員
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <% if user_signed_in? %>
+              <li><%= link_to "👤 プロファイル", "#", class: "nav-link" %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "🏁 ログアウト", destroy_user_session_path, :method => :delete, class: "dropdown-item" %></li>
+            <% else %>
+              <li><%= link_to "ログイン", new_user_session_path, class: "nav-link" %></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><%= link_to "登録", new_user_registration_path,class: "nav-link" %> </li>
+            <% end %>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

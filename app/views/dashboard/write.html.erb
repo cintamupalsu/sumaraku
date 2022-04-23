@@ -1,0 +1,77 @@
+<%provide(:title,"Write")%>
+<%provide(:form,"active")%>
+<h1 class="page-title">Write Content</h1>
+<!-- Breadcrumb -->
+<ol class="breadcrumb breadcrumb-2">
+  <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+  <li><a href="/dashboard/write">Write</a></li>
+  <li class="active"><strong>Content</strong></li>
+</ol>
+<div class="row">
+  <div class="col-lg-8">
+    <div class="panel-body">
+       <form class="form-horizontal">
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="title">Title</label>
+          <div class="col-sm-10">
+            <input type="text" placeholder="Title" id="title" class="form-control input-lg">
+           </div>
+        </div>
+        <div class="form-group">
+					<label class="col-sm-2 control-label">Created Date</label>
+					<div class="col-sm-10">
+						<div id="date-popup" class="input-group date">
+							<input type="text" data-format="D, dd MM yyyy" class="form-control">
+							<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+						</div>
+					</div>
+				</div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Photo</label>
+          <div class="col-sm-10">
+            <input type="file"  id="field-file" class="form-control">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="title">Description</label>
+          <div class="col-sm-10">
+            <input type="text" placeholder="Title" id="title" class="form-control">
+           </div>
+        </div>
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Category</label>
+          <div class="col-sm-10">
+            <select class="select2 form-control">
+              <option value="1">Announcement</option>
+              <option value="2">News</option>
+              <option value="3">Event</option>
+              <option value="4">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <h3 class="title">Content : </h3>
+            <div id="summernote">
+              <h3>新たなカップルが２組誕生しました！</h3>
+              <p>
+                本日、公益財団法人ちば国際コンベンションビューロー（CCB）千葉県国際交流センターから同センター長の笹生（さそう）さん、課長代理の清水さん、国際交流推進員の漆畑（うるしばた）さん、JICA東京の国際協力推進員の木村さんがCICCを訪問されました。CCBが年３回発行している「国際交流つうしん」3月号の記事のための取材ということで、とても楽しい時間となりました。国際交流といえば、CICCの会員の99%は外国人のムスリムで、その国籍も20 ヵ国に及びます。インドネシア文化、パキスタン文化、バングラデシュ文化、エジプト文化など、それぞれの国の文化や言語はありますが、イスラームという教えの下にまさに「多文化共生」しているのが、ムスリム共同体なのです。取材内容は多岐に渡り、CICCの歴史や活動にはじまり、イスラーム全般のこと、クルアーン（コーラン）の内容、礼拝の様子も知っていただきました。またハラール認証についても、日本アジアハラール協会の活動について情報を共有しました。ハラール食文化交流も楽しいかもしれません。今回の取材は将来のコラボ企画について考える良い刺激となりました。「となりのムスリム」のイベントをCCB x JICA x CICCで実現できたら、超楽しそうですよね🤗
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-primary" type="submit">Sign in</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-main">
+  &copy; 2022 <strong>Japan Dahwa Japan</strong> Admin Theme by <a target="_blank" href="#">No One</a>
+</footer>
+<!-- /footer -->

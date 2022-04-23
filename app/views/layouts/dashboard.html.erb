@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Mouldifi - A fully responsive, HTML5 based admin theme">
+<meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, Mouldifi, web design, CSS3">
+<title><%= yield(:title) || 'Japan Dahwa Foundation' %></title>
+<!-- Site favicon -->
+<link rel='shortcut icon' type='image/x-icon' href='/_mouldifi/images/favicon.ico' />
+
+<%= stylesheet_link_tag "/_mouldifi/css/entypo.css"%>
+<%= stylesheet_link_tag "/_mouldifi/css/font-awesome.min.css"%>
+<%= stylesheet_link_tag "/_mouldifi/css/bootstrap.min.css"%>
+<%= stylesheet_link_tag "/_mouldifi/css/mouldifi-core.css"%>
+<%= stylesheet_link_tag "/_mouldifi/css/mouldifi-forms.css"%>
+<%= stylesheet_link_tag "/_mouldifi/css/plugins/summernote/summernote.css"%>
+<%= stylesheet_link_tag "/_mouldifi/css/plugins/datepicker/bootstrap-datepicker.css"%>
+<%= stylesheet_link_tag "/_mouldifi/css/plugins/select2/select2.css"%>
+</head>
+<body>
+
+<!-- Page container -->
+<div class="page-container">
+
+  <!-- Page Sidebar -->
+  <div class="page-sidebar">
+      <%= render 'layouts/dashboard_sidebar' %>
+  </div>
+  <!-- /page sidebar -->
+
+  <!-- Main container -->
+  <div class="main-container">
+    <!-- Main header -->
+    <div class="main-header row">
+      <%= render 'layouts/dashboard_header' %>
+    </div>
+    <!-- /main header -->
+
+    <!-- Main content -->
+    <div class="main-content">
+    <%= yield %>
+    </div>
+    <!-- /main content -->
+
+    </div>
+    <!-- /main container -->
+</div>
+<!-- /page container -->
+
+<!--Load JQuery-->
+<script src="/_mouldifi/js/jquery.min.js"></script>
+<script src="/_mouldifi/js/bootstrap.min.js"></script>
+<script src="/_mouldifi/js/plugins/metismenu/jquery.metisMenu.js"></script>
+<script src="/_mouldifi/js/plugins/blockui-master/jquery-ui.js"></script>
+<script src="/_mouldifi/js/plugins/blockui-master/jquery.blockUI.js"></script>
+<script src="/_mouldifi/js/plugins/summernote/summernote.min.js"></script>
+<script src="/_mouldifi/js/plugins/select2/select2.full.min.js"></script>
+<script src="/_mouldifi/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+
+<script>
+	$(document).ready(function () {
+	  $('#date-popup').datepicker({
+			keyboardNavigation: false,
+			forceParse: false,
+			todayHighlight: true
+		});
+
+    $('#summernote').summernote({
+		  height: 260,                 // set editor height
+		  minHeight: null,             // set minimum height of editor
+		  maxHeight: null,             // set maximum height of editor
+		  focus: false                  // set focus to editable area after initializing summernote
+		});
+
+		$(".select2").select2();
+		$(".select2-placeholer").select2({
+			allowClear: true
+		});
+	});
+</script>
+<script src="/_mouldifi/js/functions.js"></script>
+</body>
+</html>

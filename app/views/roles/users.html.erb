@@ -1,0 +1,21 @@
+<%provide(:title,"ユーザー管理")%>
+
+<% if @users %>
+    <ul class="users">
+        <% @users.each do |user| %>
+            <li>
+                <%= gravatar_for user, size: 50 %>
+                <%= link_to user.name, showuserroles_path(:id => user.id) %>
+                <% if current_user.developer == 1 && user.id != current_user.id && user.id != 1 %>
+                    <%= link_to "delete", deleteuser_path(:id => user.id), method: :delete, data: { confirm: "ほんとうに？"} %>
+                <% end %>
+            </li>        
+        <% end %>
+    </ul>
+<% else %>
+    <div class="row">
+        <div class="col-12 text center">
+            <h2>You are not permitted to manage users.</h2>
+        </div>
+    </div>
+<% end %>

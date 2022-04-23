@@ -1,0 +1,51 @@
+<div class="card text-center" style="width: 6rem;">
+    <% if @selected_item == 0 %>
+        <a href=<%= root_path %> class="card-header pl-4 pt-1 pb-1 bg-warning" data-toggle="tooltip" data-placement="right" title="ニュース">
+    <% else %>
+        <a href=<%= root_path %> class="card-body pl-4 pt-1 pb-1 bg-light border-bottom" data-toggle="tooltip" data-placement="right" title="ニュース"> 
+    <% end %>
+        <%= image_tag("icons/news.png", alt:"sidetab icon", size: "40x45", id: "sidetab_icon") %>
+    </a>
+    <% if @selected_item == 1 %>
+        <a href=<%= facility_path %> class="card-header pl-4 pt-1 pb-1 bg-warning" data-toggle="tooltip" data-placement="right" title="設備">
+    <% else %>
+        <a href=<%= facility_path %> class="card-body pl-4 pt-1 pb-1 bg-light border-bottom" data-toggle="tooltip" data-placement="right" title="設備"> 
+    <% end %>
+        <%= image_tag("icons/facility.png", alt:"sidetab icon", size: "40x45", id: "sidetab_icon") %>
+    </a>
+    <% if @selected_item == 2 %>
+        <a href=<%= market_path %> class="card-header pl-4 pt-1 pb-1 bg-warning" data-toggle="tooltip" data-placement="right" title="市場">
+    <% else %>
+        <a href=<%= market_path %> class="card-body pl-4 pt-1 pb-1 bg-light border-bottom" data-toggle="tooltip" data-placement="right" title="市場"> 
+    <% end %>
+        <%= image_tag("icons/market.png", alt:"sidetab icon", size: "40x45", id: "sidetab_icon") %>
+    </a>
+    <% if @selected_item == 3 %>
+        <a href=<%= dahwa_path %> class="card-header pl-4 pt-1 pb-1 bg-warning" data-toggle="tooltip" data-placement="right" title="Dahwa">
+    <% else %>
+        <a href=<%= dahwa_path %> class="card-body pl-4 pt-1 pb-1 bg-light border-bottom" data-toggle="tooltip" data-placement="right" title="Dahwa"> 
+    <% end %>
+        <%= image_tag("icons/dahwa.png", alt:"sidetab icon", size: "40x45", id: "sidetab_icon") %>
+    </a>
+    <% if @selected_item == 4 %>
+        <a href=<%= quiz_path %> class="card-header pl-4 pt-1 pb-1 bg-warning" data-toggle="tooltip" data-placement="right" title="検定問題">
+    <% else %>
+        <a href=<%= quiz_path %> class="card-body pl-4 pt-1 pb-1 bg-light border-bottom" data-toggle="tooltip" data-placement="right" title="検定問題"> 
+    <% end %>
+        <%= image_tag("icons/quiz.png", alt:"sidetab icon", size: "40x45", id: "sidetab_icon") %>
+    </a>
+    <% if @selected_item == 5 %>
+        <a href=<%= calendar_path %> class="card-header pl-4 pt-1 pb-1 bg-warning" data-toggle="tooltip" data-placement="right" title="カレンダー">
+    <% else %>
+        <a href=<%= calendar_path %> class="card-body pl-4 pt-1 pb-1 bg-light border-bottom" data-toggle="tooltip" data-placement="right" title="カレンダー"> 
+    <% end %>
+        <%= image_tag("icons/calendar.png", alt:"sidetab icon", size: "40x45", id: "sidetab_icon") %>
+    </a>
+    <% if @selected_item == 6 %>
+        <a href=<%= halal_path %> class="card-header pl-4 pt-1 pb-1 bg-warning" data-toggle="tooltip" data-placement="right" title="ハラル静岡">
+    <% else %>
+        <a href=<%= halal_path %> class="card-body pl-4 pt-1 pb-1 bg-light border-bottom" data-toggle="tooltip" data-placement="right" title="ハラル静岡"> 
+    <% end %>
+        <%= image_tag("icons/halal.png", alt:"sidetab icon", size: "40x45", id: "sidetab_icon") %>
+    </a>
+</div>
